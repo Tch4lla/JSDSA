@@ -7,7 +7,14 @@ e.g palindromeChecker('racecar') // will return true
 
 
 function palindromeChecker(text) {
-    v// Code goes here
+    // Code goes here
+    var textLen = text.length
+    for (var i = 0; i < textLen/2 ; i++){
+        if(text[i] !== text[textLen - 1 - i]){
+            return false
+        }
+    }
+    return true
 }
 
 

@@ -19,8 +19,16 @@ E.g reverseString('algorithms') // should return 'smhtirogla'
 //     return result
 // }
 
-function reverseString(text){
-    return [...text].reduce((acc,char) => char + acc, '')
-}
+// function reverseString(text){
+//     return [...text].reduce((acc,char) => char + acc, '')
+// }
 
+function reverseString(text){
+    if(text === ''){
+        return ''
+    } else {
+       return reverseString(text.substr(1)) + text[0]
+    }
+
+}
 module.exports = reverseString
