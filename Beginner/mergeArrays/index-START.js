@@ -18,5 +18,23 @@ function mergeArrays(...arrays) {
     return [...new Set([...jointArray])]
 }
 
+//using reduce 
+function mergedArraysReduce(...arrays){
+    let joinedArrays = []
+
+    arrays.forEach(array => {
+        joinedArrays = [...joinedArrays, ...array]
+    })
+
+    const uniqueArray = joinedArrays.reduce((newArray, item) => {
+        if(newArray.includes(item)){
+            return newArray
+        } else {
+            return [...newArray, item]
+        }
+    }, [])
+
+    return uniqueArray
+}
 
 module.exports = mergeArrays
