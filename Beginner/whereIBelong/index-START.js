@@ -10,10 +10,15 @@ than 1(index 0), but less than 2(index 1).
 
 
 function whereIBelong(arr, num) {
-   // Code goes here
-
+   let counter = 0
+   for(value of arr){
+      if(value < num){
+         counter++
+      }
+   }
+   return counter
 }
 
-
+console.log(whereIBelong([], 1))
 
 module.exports = whereIBelong

@@ -37,4 +37,20 @@ function mergedArraysReduce(...arrays){
     return uniqueArray
 }
 
+//using filter
+function mergeTheArray (...arrays){
+    let thirdJoinedArrays = []
+
+    arrays.forEach(array => {
+        thirdJoinedArrays = [...thirdJoinedArrays, ...array]
+    })
+    //indexOf used to get the first index at which a given element can be found. It returns -1 if the element isn't present.
+
+    //this compares the first index which the current item can be found with the current index for that iteration. If they match, it's the first time the element occurs in the array. if they don't match, the value has been encountered before and is filtered out 
+    const secondUniquArray = thirdJoinedArrays.filter((item, index) => {
+        thirdJoinedArrays.indexOf(item) === index
+    })
+    return secondUniquArray
+}
+
 module.exports = mergeArrays
