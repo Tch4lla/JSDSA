@@ -4,16 +4,16 @@ ordering of that which was received. E.g
     reverseInteger(-123) // should return -321
 */
 
-
-function reverseString(text) {
-    return [...text].reduce((acc, char) => char + acc, '')
+//reverse a string function 
+function reverseString(str){
+    return [...str].reduce((acc, curr) => curr + acc, '')
 }
 
-function reverseInteger(num) {
+function reverseInteger(num){
     let reversedNumber = parseInt(reverseString(num.toString()))
-    return (reversedNumber * Math.sign(num))
-}
 
+    return reversedNumber * Math.sign(num)
+}
 
 
 module.exports = reverseInteger;
